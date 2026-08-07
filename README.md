@@ -1,74 +1,71 @@
-# 💰 Expense Tracker Dashboard
+# 💰 ระบบสรุปรายรับ-รายจ่าย (Expense Tracker Dashboard)
 
 ![Expense Tracker Preview](./public/preview.png)
 
-A modern, full-stack Expense Tracker Dashboard built with **Next.js**, **React**, and **Supabase**. This project features premium data visualization, a sleek dark mode UI with glassmorphism effects, and real-time database operations.
+ระบบจัดการและสรุปรายรับ-รายจ่ายแบบ Full-stack ที่ทันสมัย พัฒนาด้วย **Next.js**, **React** และ **Supabase** โปรเจคนี้โดดเด่นด้วยการนำเสนอข้อมูลผ่านกราฟที่สวยงาม (Data Visualization) ดีไซน์หน้าเว็บแบบ Dark Mode สไตล์ Glassmorphism และระบบฐานข้อมูลที่ใช้งานได้จริงแบบ Real-time
 
-## ✨ Features
+## ✨ ฟีเจอร์หลัก
 
-- **Dashboard Overview:** Instantly view Total Balance, Total Income, and Total Expenses.
-- **Data Visualization:**
-  - **Bar Chart:** Compare monthly income vs. expenses.
-  - **Donut Chart:** Analyze expense breakdown by categories.
-- **Transaction History:** View recent transactions with clean, easy-to-read formatting.
-- **Full-stack CRUD:** Add and delete transactions directly into a PostgreSQL database.
-- **Premium UI/UX:** Built with Vanilla CSS featuring CSS Variables, Glassmorphism, Micro-animations, and responsive design.
-- **Localization:** Fully localized for Thai users.
+- **หน้าสรุปข้อมูล (Dashboard):** แสดงยอดเงินคงเหลือ รายรับรวม และรายจ่ายรวม ได้อย่างรวดเร็ว
+- **การนำเสนอข้อมูลด้วยกราฟ (Data Visualization):**
+  - **กราฟแท่ง (Bar Chart):** เปรียบเทียบรายรับและรายจ่ายในแต่ละเดือน
+  - **กราฟวงกลม (Donut Chart):** วิเคราะห์สัดส่วนรายจ่ายตามหมวดหมู่
+- **ประวัติการทำรายการ (Transaction History):** ดูรายการล่าสุดพร้อมรูปแบบที่อ่านง่าย สบายตา
+- **ระบบ Full-stack CRUD:** สามารถเพิ่มและลบรายการได้ โดยข้อมูลจะถูกบันทึกลงฐานข้อมูล PostgreSQL โดยตรง
+- **Premium UI/UX:** ตกแต่งหน้าเว็บด้วย Vanilla CSS แบบเพียวๆ พร้อมรองรับ CSS Variables, เอฟเฟกต์กระจก (Glassmorphism), อนิเมชันย่อยๆ (Micro-animations) และรองรับการแสดงผลทุกหน้าจอ (Responsive)
+- **รองรับภาษาไทย:** ข้อความและการแสดงผลวันที่ถูกปรับแต่งให้เหมาะสำหรับผู้ใช้งานชาวไทยโดยเฉพาะ
 
-## 🚀 Tech Stack
+## 🚀 เทคโนโลยีที่ใช้ (Tech Stack)
 
 - **Frontend:** Next.js (App Router), React 18
 - **Backend/Database:** Supabase (PostgreSQL)
-- **Styling:** Vanilla CSS (Zero-config, highly optimized)
+- **Styling:** Vanilla CSS (ไม่พึ่งพา Framework ภายนอก โหลดไวและเบามาก)
 - **Data Visualization:** Recharts
 - **Icons:** Lucide React
 - **Date Formatting:** date-fns
 
-## 🛠️ Getting Started
+## 🛠️ วิธีการติดตั้งและรันโปรเจค
 
-### Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) installed on your machine. You will also need a [Supabase](https://supabase.com/) account.
+### สิ่งที่ต้องมี
+ตรวจสอบให้แน่ใจว่าเครื่องของคุณติดตั้ง [Node.js](https://nodejs.org/) แล้ว และคุณจำเป็นต้องมีบัญชีของ [Supabase](https://supabase.com/) สำหรับจัดการฐานข้อมูล
 
-### 1. Clone the repository
+### 1. โคลนโปรเจค
 ```bash
-git clone https://github.com/yourusername/expense-tracker-dashboard.git
-cd expense-tracker-dashboard
+git clone https://github.com/Phumrapeekub/Expense-Tracker-Dashboard.git
+cd Expense-Tracker-Dashboard
 ```
 
-### 2. Install Dependencies
+### 2. ติดตั้งแพ็กเกจที่จำเป็น
 ```bash
 npm install
 ```
 
-### 3. Setup Supabase
-1. Create a new project on [Supabase](https://supabase.com/).
-2. Go to the **SQL Editor** in your Supabase dashboard.
-3. Copy the contents of `supabase/schema.sql` and run it to create the `transactions` table.
-4. Rename `.env.local.example` (or create a new `.env.local` file) in the root of your project:
+### 3. ตั้งค่า Supabase (ฐานข้อมูล)
+1. สร้างโปรเจคใหม่ใน [Supabase](https://supabase.com/)
+2. ไปที่เมนู **SQL Editor** ในหน้า Dashboard ของ Supabase
+3. ก๊อปปี้คำสั่ง SQL ในไฟล์ `supabase/schema.sql` ไปรันเพื่อสร้างตาราง `transactions`
+4. เปลี่ยนชื่อไฟล์ `.env.local.example` เป็น `.env.local` (หรือสร้างไฟล์ใหม่) ในโฟลเดอร์หลักของโปรเจค และกรอกข้อมูลดังนี้:
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_SUPABASE_URL=ลิงก์_โปรเจค_Supabase_ของคุณ
+NEXT_PUBLIC_SUPABASE_ANON_KEY=Key_ของ_Supabase_ของคุณ
 ```
 
-### 4. Run the Development Server
+### 4. รันเซิร์ฟเวอร์จำลอง
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+เปิดเบราว์เซอร์ไปที่ [http://localhost:3000](http://localhost:3000) เพื่อดูผลลัพธ์ได้เลยครับ
 
-## 📁 Project Structure
+## 📁 โครงสร้างโฟลเดอร์
 
 ```
-├── app/                  # Next.js App Router (Pages & Layout)
-├── components/           # Reusable React components (Charts, Modals, Cards)
-├── lib/                  # Utility functions (Supabase client)
-├── supabase/             # Database schema and setup scripts
-└── public/               # Static assets
+├── app/                  # ส่วนควบคุมหน้าเพจและเลย์เอาต์ (Next.js App Router)
+├── components/           # ส่วนประกอบของหน้าเว็บ (กราฟ, กล่องข้อความ, การ์ดต่างๆ)
+├── lib/                  # ฟังก์ชันตัวช่วย (การเชื่อมต่อ Supabase)
+├── supabase/             # โค้ดสร้างฐานข้อมูล (SQL schema)
+└── public/               # รูปภาพและไฟล์คงที่ต่างๆ
 ```
 
-## 🤝 Contributing
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/expense-tracker-dashboard/issues).
-
-## 📝 License
-This project is open-source and available under the [MIT License](LICENSE).
+## 📝 ไลเซนส์ (License)
+โปรเจคนี้เป็น Open-source สามารถนำไปศึกษาและต่อยอดได้ตามเงื่อนไขของ [MIT License](LICENSE)
